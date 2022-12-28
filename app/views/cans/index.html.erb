@@ -1,2 +1,7 @@
 <h1>FIRDI Can Sterilization</h1>
 <h2>put csv</h2>
+
+<%= form_tag('/cans/result', multipart: true) do %>
+  csv:<%= file_field_tag :file %>
+  <%= submit_tag( "Import" ) %>
+<% end %>

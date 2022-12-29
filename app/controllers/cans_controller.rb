@@ -8,7 +8,7 @@ class CansController < ApplicationController
     def result
         rowarray = Array.new
         myfile = params[:file]
-    
+        @result = `python3 lib/assets/python/test.py "#{myfile.path}"`
         CSV.foreach(myfile.path) do |row|
           rowarray << row
           @rowarraydisp = rowarray
